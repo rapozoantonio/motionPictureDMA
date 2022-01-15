@@ -10,5 +10,7 @@
 
         public int  Release_Year { get; set; }
 
+        public string PictureFileName { get; set; }    
+
     }
 }

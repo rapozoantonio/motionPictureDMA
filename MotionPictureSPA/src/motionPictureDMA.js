@@ -49,7 +49,7 @@ const motionPictureDMA={template:`
                 </div>
                 <div class="modal-body bg-dark">
                 <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="p-2 w-50 bd-highlight">
+                    <div class="p-2 w-30 bd-highlight">
                         <div class="input-group mb-3">
                             <span class="input-group-text" >Name</span>
                             <input id="name" type="text" class="form-control w-50" required v-model="Name">
@@ -62,13 +62,12 @@ const motionPictureDMA={template:`
                             <span class="input-group-text">Release Year</span>
                             <input  id="releaseYear" type="number" min="1000" max="9999" step="1" value="2022" class="form-control" v-model="Release_Year">
                         </div>
+                        <div class="p-2 w-50 bd-highlight">
+                            <img width="250px" height="250px" :alt="PictureFileName":src="PicturePath+PictureFileName"/>
+                            <input class="m-2" type="file" @change="imageUpload"">
+                        </div>
                     </div>
-                    <div class="p-2 w-50 bd-highlight">
-                        <img width="250px" height="250px"
-                            :src="PicturePath+PictureFileName"/>
-                        <input class="m-2" type="file" @change="imageUpload">
-                    </div>
-                </div>
+                                </div>
                 <button type="button" @click="createClick()"
                 v-if="Id==0" class="btn btn-primary">
                 Save

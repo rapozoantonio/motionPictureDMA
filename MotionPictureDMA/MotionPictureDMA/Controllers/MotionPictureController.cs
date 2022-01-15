@@ -33,7 +33,7 @@ namespace MotionPictureDMA.Controllers
         {
 
             string query = @"
-                              SELECT Id, Name, Description, Release_Year 
+                              SELECT Id, Name, Description, Release_Year, PictureFileName
                               FROM dbo.MotionPictures
                             ";
             DataTable table = new DataTable();
@@ -63,8 +63,8 @@ namespace MotionPictureDMA.Controllers
     {
         string query = @"
                               INSERT INTO dbo.MotionPictures
-                                    (Name,Description,Release_Year)
-                              VALUES (@Name,@Description,@Release_Year)
+                                    (Name,Description,Release_Year, PictureFileName)
+                              VALUES (@Name,@Description,@Release_Year, @PictureFileName)
                                ";
         DataTable table = new DataTable();
         string sqlDataSource = _configuration.GetConnectionString("MotionPictureDMA");
@@ -77,6 +77,7 @@ namespace MotionPictureDMA.Controllers
                 myCommand.Parameters.AddWithValue("@Name", mp.Name);
                 myCommand.Parameters.AddWithValue("@Description", mp.Description);
                 myCommand.Parameters.AddWithValue("@Release_Year", mp.Release_Year);
+                myCommand.Parameters.AddWithValue("@PictureFileName", mp.PictureFileName);
                 myReader = myCommand.ExecuteReader();
                 table.Load(myReader);
                 myReader.Close();
@@ -95,7 +96,7 @@ namespace MotionPictureDMA.Controllers
     {
         string query = @"
                               UPDATE dbo.MotionPictures
-                              SET Name = @Name, Description = @Description, Release_Year = @Release_Year
+                              SET Name = @Name, Description = @Description, Release_Year = @Release_Year, PictureFileName = @PictureFileName
                               WHERE Id=@Id
                                     ";
         DataTable table = new DataTable();
@@ -110,6 +111,7 @@ namespace MotionPictureDMA.Controllers
                 myCommand.Parameters.AddWithValue("@Name", mp.Name);
                 myCommand.Parameters.AddWithValue("@Description", mp.Description);
                 myCommand.Parameters.AddWithValue("@Release_Year", mp.Release_Year);
+                myCommand.Parameters.AddWithValue("@PictureFileName", mp.PictureFileName);
                 myReader = myCommand.ExecuteReader();
                 table.Load(myReader);
                 myReader.Close();
