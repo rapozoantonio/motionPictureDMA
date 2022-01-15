@@ -15,13 +15,18 @@ The application should function like a SPA with no postbacks to get/send data to
 <br>
 
 Database:
+
 - Microsoft SQL Server 2019 Express
 - Microsoft SQL Server Management Studio (SSMS)
 IDE: Microsoft Visual Studio Community 2019
+
 Server Side:
+
 - ASP.NET Core 3.x
 - C#
+
 Client:
+
 - HTML
 - CSS
 - ES6
