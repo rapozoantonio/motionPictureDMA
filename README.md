@@ -10,7 +10,7 @@
 The application should function like a SPA with no postbacks to get/send data to the server. This will require an API for your client-side code to communicate with to send/receive data. How this is implemented is up to you.
 
 ***
-## 🚀⚙️ Technical Requirements
+## 🚀 Technical Requirements
 
 <br>
 
@@ -33,7 +33,7 @@ Client:
 - Vue.js
 
 ***
-## 🚀 Technical Requirements
+## 🚀 Functional Requirements
 
 Database
 A table must be created to store motion picture records:
